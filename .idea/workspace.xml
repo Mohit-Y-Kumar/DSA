@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7d54860b-70e9-4c14-953c-bd83ed68ace5" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Mohit-Y-Kumar&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Mohit-Y-Kumar/DSA.git&quot;,
+    &quot;accountId&quot;: &quot;b18aa76f-edb4-4b82-b3e7-463d3cac81d3&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2ovyPLX8XtRJlU24XMQHiU6uTHh" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Array_list.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Binary_String.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Container_most_water.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Count_Substring.executor&quot;: &quot;Run&quot;,
+    &quot;Application.DoublyLL.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Duplicate_paren.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Facto.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Fibb.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Find_Occurences.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Find_permutation.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Find_subset.executor&quot;: &quot;Run&quot;,
+    &quot;Application.First_Occurence.executor&quot;: &quot;Run&quot;,
+    &quot;Application.First_n_sum.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Friend_pair_problem.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Grid_Ways.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Intersection_ArrL.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Intersection_LL.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Is_Sorted.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LL_JCF.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Last_occurence.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LinkedList2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Linkedlist.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Lonely_num.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MERGE_SORT.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Max_Area_Histogram.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Mergesort.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Monotic_arraylist.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Most_frequent_num.executor&quot;: &quot;Run&quot;,
+    &quot;Application.N_Queen_4.executor&quot;: &quot;Run&quot;,
+    &quot;Application.N_queen_1_sol.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Next_Greater.executor&quot;: &quot;Run&quot;,
+    &quot;Application.OOP.executor&quot;: &quot;Run&quot;,
+    &quot;Application.PairSum.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Practice__oop.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Push_Bottom.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Q1_merge_sort.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Quick_sort.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Rate_in_maze.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Recursion_basic.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Remove_duplicate.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Rev_Stack.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Rev_String.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Sorted_rotated_Array.executor&quot;: &quot;Run&quot;,
+    &quot;Application.StackB.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Stack_ArrayList.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Stack_JCF.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Stock_Span.executor&quot;: &quot;Run&quot;,
+    &quot;Application.String_len.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Sudoku_.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Swap.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Tilling_prob.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Tower_OF_Hanoi.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Valid_Paren_String.executor&quot;: &quot;Run&quot;,
+    &quot;Application.X_to_powN.executor&quot;: &quot;Run&quot;,
+    &quot;Application._1_array.executor&quot;: &quot;Run&quot;,
+    &quot;Application._2D_LIST.executor&quot;: &quot;Run&quot;,
+    &quot;Application._2_major_el.executor&quot;: &quot;Run&quot;,
+    &quot;Application._2_major_el_brute.executor&quot;: &quot;Run&quot;,
+    &quot;Application.merge.executor&quot;: &quot;Run&quot;,
+    &quot;Application.num_T0_Str.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Mohit/IdeaProjects/OOPS&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Mohit/IdeaProjects/OOPS/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.12870014&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Backtracking" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Push_Bottom">
+    <configuration name="Duplicate_paren" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="STACK.Duplicate_paren" />
+      <module name="OOPS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="STACK.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Max_Area_Histogram" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="$USER_HOME$/.jdks/openjdk-23.0.1" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="STACK.Max_Area_Histogram" />
+      <module name="OOPS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="STACK.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Next_Greater" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="STACK.Next_Greater" />
+      <module name="OOPS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="STACK.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Push_Bottom" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="STACK.Push_Bottom" />
+      <module name="OOPS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="STACK.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Valid_Paren_String" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="STACK.Valid_Paren_String" />
+      <module name="OOPS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="STACK.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Push_Bottom" />
+        <item itemvalue="Application.Max_Area_Histogram" />
+        <item itemvalue="Application.Duplicate_paren" />
+        <item itemvalue="Application.Valid_Paren_String" />
+        <item itemvalue="Application.Next_Greater" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7d54860b-70e9-4c14-953c-bd83ed68ace5" name="Changes" comment="" />
+      <created>1731764324909</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1731764324909</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/RECURSION/Facto.java</url>
+          <line>3</line>
+          <properties class="RECURSION.Facto" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
