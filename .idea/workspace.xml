@@ -5,17 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d54860b-70e9-4c14-953c-bd83ed68ace5" name="Changes" comment="//initial commit">
-      <change afterPath="$PROJECT_DIR$/src/QUEUE/Circular_Queue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/QUEUE/First_non_repeat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/QUEUE/Q_interLeave.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/QUEUE/Q_reversal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/QUEUE/Queue_Arr.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/QUEUE/Queue_JCF.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/QUEUE/Queue_LL.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/QUEUE/Queue_by_2stack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/QUEUE/Stack_using_2q.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/QUEUE/Stack_using_dq.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/QUEUE/gen_binary_1_toN.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Greedy_Algorithms/_1_Activity_Selection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Greedy_Algorithms/_2Fractional_Knapsack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Greedy_Algorithms/_3_min_abs_diff.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Greedy_Algorithms/_4_max_chain_len.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Greedy_Algorithms/_5_Indian_coin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Greedy_Algorithms/_6_Job_Seq_max_pro.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Greedy_Algorithms/_7_Chocola_cut.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Greedy_Algorithms/_8a_max_bal_str_part.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Greedy_Algorithms/_8b_KthOdd_inRange.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,6 +29,12 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -62,6 +66,7 @@
     &quot;Application.Array_list.executor&quot;: &quot;Run&quot;,
     &quot;Application.Binary_String.executor&quot;: &quot;Run&quot;,
     &quot;Application.Circular_Queue.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Conn_rope_min_cos_2.executor&quot;: &quot;Run&quot;,
     &quot;Application.Container_most_water.executor&quot;: &quot;Run&quot;,
     &quot;Application.Count_Substring.executor&quot;: &quot;Run&quot;,
     &quot;Application.DoublyLL.executor&quot;: &quot;Run&quot;,
@@ -128,10 +133,22 @@
     &quot;Application.Tower_OF_Hanoi.executor&quot;: &quot;Run&quot;,
     &quot;Application.Valid_Paren_String.executor&quot;: &quot;Run&quot;,
     &quot;Application.X_to_powN.executor&quot;: &quot;Run&quot;,
+    &quot;Application._1_Activity_Selection.executor&quot;: &quot;Run&quot;,
+    &quot;Application._1_Build_tree_preo.executor&quot;: &quot;Run&quot;,
     &quot;Application._1_array.executor&quot;: &quot;Run&quot;,
     &quot;Application._2D_LIST.executor&quot;: &quot;Run&quot;,
+    &quot;Application._2_Fractional_Knapsack.executor&quot;: &quot;Run&quot;,
+    &quot;Application._2_H_Tree.executor&quot;: &quot;Run&quot;,
     &quot;Application._2_major_el.executor&quot;: &quot;Run&quot;,
     &quot;Application._2_major_el_brute.executor&quot;: &quot;Run&quot;,
+    &quot;Application._3_Count_Node.executor&quot;: &quot;Run&quot;,
+    &quot;Application._3_min_abs_diff.executor&quot;: &quot;Run&quot;,
+    &quot;Application._4_max_chain_len.executor&quot;: &quot;Run&quot;,
+    &quot;Application._5_Indian_coin.executor&quot;: &quot;Run&quot;,
+    &quot;Application._6_Job_Seq_max_pro.executor&quot;: &quot;Run&quot;,
+    &quot;Application._7_Chocola_cut.executor&quot;: &quot;Run&quot;,
+    &quot;Application._8a_max_bal_str_part.executor&quot;: &quot;Run&quot;,
+    &quot;Application._8b_KthOdd_inRange.executor&quot;: &quot;Run&quot;,
     &quot;Application.gen_binary_1_toN.executor&quot;: &quot;Run&quot;,
     &quot;Application.merge.executor&quot;: &quot;Run&quot;,
     &quot;Application.num_T0_Str.executor&quot;: &quot;Run&quot;,
@@ -162,13 +179,13 @@
       <recent name="Backtracking" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.gen_binary_1_toN">
-    <configuration name="Dq" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Deque.Dq" />
+  <component name="RunManager" selected="Application._3_Count_Node">
+    <configuration name="_1_Build_tree_preo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TREES._1_Build_tree_preo" />
       <module name="OOPS" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Deque.*" />
+          <option name="PATTERN" value="TREES.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -176,12 +193,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Q_interLeave" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="QUEUE.Q_interLeave" />
+    <configuration name="_2_H_Tree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TREES._2_H_Tree" />
       <module name="OOPS" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="QUEUE.*" />
+          <option name="PATTERN" value="TREES.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -189,12 +206,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Q_reversal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="QUEUE.Q_reversal" />
+    <configuration name="_3_Count_Node" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TREES._3_Count_Node" />
       <module name="OOPS" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="QUEUE.*" />
+          <option name="PATTERN" value="TREES.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -202,12 +219,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Stack_using_dq" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="QUEUE.Stack_using_dq" />
+    <configuration name="_8a_max_bal_str_part" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Greedy_Algorithms._8a_max_bal_str_part" />
       <module name="OOPS" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="QUEUE.*" />
+          <option name="PATTERN" value="Greedy_Algorithms.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -215,12 +232,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="gen_binary_1_toN" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="QUEUE.gen_binary_1_toN" />
+    <configuration name="_8b_KthOdd_inRange" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Greedy_Algorithms._8b_KthOdd_inRange" />
       <module name="OOPS" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="QUEUE.*" />
+          <option name="PATTERN" value="Greedy_Algorithms.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -230,11 +247,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.gen_binary_1_toN" />
-        <item itemvalue="Application.Stack_using_dq" />
-        <item itemvalue="Application.Dq" />
-        <item itemvalue="Application.Q_reversal" />
-        <item itemvalue="Application.Q_interLeave" />
+        <item itemvalue="Application._3_Count_Node" />
+        <item itemvalue="Application._2_H_Tree" />
+        <item itemvalue="Application._1_Build_tree_preo" />
+        <item itemvalue="Application._8b_KthOdd_inRange" />
+        <item itemvalue="Application._8a_max_bal_str_part" />
       </list>
     </recent_temporary>
   </component>
@@ -263,7 +280,47 @@
       <option name="project" value="LOCAL" />
       <updated>1736827488909</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="//initial commit">
+      <option name="closed" value="true" />
+      <created>1736828161814</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1736828161814</updated>
+    </task>
+    <task id="LOCAL-00004" summary="//initial commit">
+      <option name="closed" value="true" />
+      <created>1736828281593</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1736828281593</updated>
+    </task>
+    <task id="LOCAL-00005" summary="//initial commit">
+      <option name="closed" value="true" />
+      <created>1736828388446</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1736828388446</updated>
+    </task>
+    <task id="LOCAL-00006" summary="//initial commit">
+      <option name="closed" value="true" />
+      <created>1736828485648</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1736828485648</updated>
+    </task>
+    <task id="LOCAL-00007" summary="//initial commit">
+      <option name="closed" value="true" />
+      <created>1736828539643</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1736828539643</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
