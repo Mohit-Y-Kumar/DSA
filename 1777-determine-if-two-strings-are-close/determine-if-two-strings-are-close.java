@@ -1,31 +1,24 @@
 class Solution {
     public boolean closeStrings(String word1, String word2) {
-        int[] freq1 = new int[26];
-        int[] freq2 = new int[26];
-
-        for (char ch : word1.toCharArray()) {
-            freq1[ch - 'a']++;
+        if(word1.length() !=word2.length()){
+            return false;
         }
-
-        for (char ch : word2.toCharArray()) {
-            freq2[ch - 'a']++;
+       Map<Character, Integer> freq1 = new HashMap<>();
+        Map<Character, Integer> freq2 = new HashMap<>();
+        for(char ch:word1.toCharArray()){
+            freq1.put(ch,freq1.getOrDefault(ch,0)+1);
         }
-
-        for (int i = 0; i < 26; i++) {
-            if ((freq1[i] == 0 && freq2[i] != 0) || (freq1[i] != 0 && freq2[i] == 0)) {
-                return false;
-            }
+        for(char ch:word2.toCharArray()){
+            freq2.put(ch,freq2.getOrDefault(ch,0)+1);
         }
-
-        Arrays.sort(freq1);
-        Arrays.sort(freq2);
-
-        for (int i = 0; i < 26; i++) {
-            if (freq1[i] != freq2[i]) {
-                return false;
-            }
+        if (!freq1.keySet().equals(freq2.keySet())) {
+            return false;
         }
+        List<Integer> list1 = new ArrayList<>(freq1.values());
+        List<Integer> list2 = new ArrayList<>(freq2.values());
+        Collections.sort(list1);
+        Collections.sort(list2);
 
-        return true;
+        return list1.equals(list2);
     }
 }
