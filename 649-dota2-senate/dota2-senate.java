@@ -43,23 +43,5 @@ class Solution {
 
         return rCount > 0 ? "Radiant" : "Dire";
     }
-
-    /**
-     * Remove the first occurrence of 'ch' starting from idx circularly.
-     * Returns true if the removed index was to the left of starting idx.
-     */
-    private boolean removeSenator(StringBuilder sb, char ch, int idx) {
-        int n = sb.length();
-        boolean removedLeft = false;
-
-        for (int i = 0; i < n; i++) {
-            int pos = (idx + i) % n;
-            if (sb.charAt(pos) == ch) {
-                if (pos < idx) removedLeft = true; // removed left side
-                sb.deleteCharAt(pos); // remove the senator
-                break;
-            }
-        }
-
-        return removedLeft;
-    }}
+}
+    
