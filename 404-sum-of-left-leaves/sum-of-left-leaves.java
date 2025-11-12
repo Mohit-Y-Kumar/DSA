@@ -16,24 +16,28 @@
 class Solution {
     public int sumOfLeftLeaves(TreeNode root) {
      
-     return leaf(root,null);
+    //  return leaf(root,null);
+     return leaf(root,false);
        
         
        
     }
-    public int leaf(TreeNode root,TreeNode parent){
+    // public int leaf(TreeNode root,TreeNode parent){
+    public int leaf(TreeNode root,boolean isLeft){
+
+
         if(root ==null){
             return 0;
         }
           
-          if(root.left==null && root.right==null ){
-             if(parent !=null && parent.left ==root){
+        if(root.left==null && root.right==null && isLeft ==true ){
+            // if(parent !=null && parent.left ==root){
                 return root.val;
-             }
-            }
+            // }
+        }
         
-        int left =leaf(root.left,root);
-        int right =leaf(root.right,root);
+        int left =leaf(root.left,true);
+        int right =leaf(root.right,false);
         return left+right;
 
 
