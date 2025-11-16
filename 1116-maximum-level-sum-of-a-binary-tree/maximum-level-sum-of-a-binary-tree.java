@@ -21,13 +21,13 @@ class Solution {
         Queue<TreeNode>q =new LinkedList<>();
         q.offer(root);
 
-        int maxsum =Integer.MIN_VALUE;
+        long maxsum =Integer.MIN_VALUE;
         int maxlevel =1;
         int currentlevel =1;
 
         while(!q.isEmpty()){
             int levelsize =q.size();
-            int sum =0;
+            long sum =0;
 
             for(int i =0;i<levelsize;i++){
                 TreeNode node =q.poll();
