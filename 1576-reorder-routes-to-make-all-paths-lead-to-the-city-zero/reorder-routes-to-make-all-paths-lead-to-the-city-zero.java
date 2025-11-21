@@ -30,24 +30,36 @@ class Solution {
         }
 
         // Start DFS from node 0
-        return dfs(adj, 0, -1);
+        return bfs(adj, n);
     }
 
-    // DFS to count reversals
-    private int dfs(List<List<Edge>> adj, int node, int parent) {
-        int changes = 0;
+    private int  bfs(List<List<Edge>> adj, int n){
+        int count=0;
+        boolean vis[] =new boolean[n];
+        Queue<Integer> q = new LinkedList<>();
+        q.add(0);
+        vis[0] =true;
+        while(!q.isEmpty()){
+            int curr =q.remove();
+            for (Edge e : adj.get(curr)) {
+                if (!vis[e.to]) {
+                    vis[e.to] = true;
 
-        for (Edge e : adj.get(node)) {
+                    // cost = 1 means original direction needs reversing
+                    count += e.cost;
 
-            if (e.to == parent) continue;  // avoid going back to parent
-
-            // If cost = 1 → edge is wrong direction → must reverse
-            changes += e.cost;
-
-            // Recursive DFS
-            changes += dfs(adj, e.to, node);
+                    q.add(e.to);
+                }
+            }
+            
         }
+         return count;
 
-        return changes;
     }
 }
+
+
+
+
+
+    
