@@ -20,6 +20,7 @@ class Solution {
             for(int j =0;j<m;j++){
                 if(grid[i][j]==2){
                     q.add(new Node(i,j,0));
+                    vis[i][j]=true;
                 }
 
             }
