@@ -1,75 +1,47 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
 class Solution {
-    static class Node {
-    int i, j, t;
-    Node(int i, int j, int t) {
-        this.i = i;
-        this.j = j;
-        this.t = t;
-    }
-}
-
     public int orangesRotting(int[][] grid) {
-        int n = grid.length;
-        int m =grid[0].length;
-        int ans =0;
+        int rows = grid.length;
+        int cols = grid[0].length;
+        Queue<int[]> queue = new LinkedList<>();
+        int freshOranges = 0;
+        int maxTime = 0;
 
-        Queue<Node> q =new LinkedList<>();
-        boolean [][]vis = new boolean[n][m];
- //push all sources in q
-        for(int i =0;i<n;i++){
-            for(int j =0;j<m;j++){
-                if(grid[i][j]==2){
-                    q.add(new Node(i,j,0));
-                    vis[i][j]=true;
+        // Initialize queue and count fresh oranges
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (grid[i][j] == 2) {
+                    queue.offer(new int[]{i, j, 0}); // {row, col, time}
+                } else if (grid[i][j] == 1) {
+                    freshOranges++;
                 }
-
             }
         }
 
-        //bfs
-        while(!q.isEmpty()){
-            Node curr =q.poll();
-            int i  =curr.i;
-            int j =curr.j;
-            int t =curr.t;
-            ans =Math.max(ans,t);
+        int[][] directions = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 
-            if(i-1 >=0 && !vis[i-1][j] && grid[i-1][j] ==1){ //top
-              q.add(new Node(i-1,j,t+1));
-              vis[i-1][j]=true;
-            }
-            
-            if(i+1 <n && !vis[i+1][j] && grid[i+1][j] ==1){ //bottom
-              q.add(new Node(i+1,j,t+1));
-              vis[i+1][j]=true;
+        // BFS traversal
+        while (!queue.isEmpty()) {
+            int[] node = queue.poll();
+            int r = node[0], c = node[1], time = node[2];
+            maxTime = Math.max(maxTime, time);
 
-            }
+            for (int[] dir : directions) {
+                int newR = r + dir[0];
+                int newC = c + dir[1];
 
-           
-            if(j+1 <m && !vis[i][j+1] && grid[i][j+1] ==1){ //right
-              q.add(new Node(i,j+1,t+1));
-              vis[i][j+1]=true;
-
-            }
-
-            
-            if(j-1 >=0 && !vis[i][j-1] && grid[i][j-1] ==1){ //left
-              q.add(new Node(i,j-1,t+1));
-              vis[i][j-1]=true;
-
-            }
-
-        }
-
-                //check fresh orange
-        for(int i =0;i<n;i++){
-            for(int j =0;j<m;j++){
-                if(grid[i][j]==1  && !vis[i][j]){
-                    return -1;
+                if (newR >= 0 && newR < rows && newC >= 0 && newC < cols && grid[newR][newC] == 1) {
+                    // This fresh orange rots
+                    grid[newR][newC] = 2;
+                    freshOranges--;
+                    queue.offer(new int[]{newR, newC, time + 1});
                 }
-
             }
         }
-        return ans;
+
+        // Final check for remaining fresh oranges
+        return freshOranges == 0 ? maxTime : -1;
     }
 }
