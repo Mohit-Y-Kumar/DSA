@@ -12,16 +12,14 @@
  *         this.right = right;
  *     }
  * }
- */
-class Solution {
+ */class Solution {
     public int sumRootToLeaf(TreeNode root) {
-        return DFS(root, 0);
+        return sumRootToLeaf(root, 0);
     }
-
-    public int DFS(TreeNode rt, int x) {
-        if (rt==null) return 0;
-        x = x*2 + rt.val;
-        if(rt.left==rt.right) return x;
-        return DFS(rt.left, x) + DFS(rt.right, x);
+    public int sumRootToLeaf(TreeNode root, int sum){
+        if(root == null) return 0;
+        sum = (2 * sum) + root.val;
+        if(root.left == null && root.right == null) return sum;
+        return sumRootToLeaf(root.left, sum) + sumRootToLeaf(root.right, sum);
     }
 }
