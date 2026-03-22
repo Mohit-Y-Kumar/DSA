@@ -1,7 +1,7 @@
 class Solution {
     public int[][] reverseSubmatrix(int[][] grid, int x, int y, int k) {
 
-        for(int col = y; col < y + k; col++){
+        for(int col = y; col <= y + k-1; col++){
             int top = x;
             int bottom = x + k - 1;
 
