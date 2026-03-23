@@ -9,54 +9,53 @@ class Solution {
             this.min = min;
         }
     }
-     Pair[][] dp;
-    public Pair solve(int i, int j, int[][] grid) {
+
+    Pair[][] dp; // class-level dp
+
+    public int maxProductPath(int[][] grid) {
         int m = grid.length;
         int n = grid[0].length;
 
+        dp = new Pair[m][n]; // initialize dp
+
         // Base case
-        if (i == m - 1 && j == n - 1) {
-            return new Pair(grid[i][j], grid[i][j]);
-        }
-        if (dp[i][j] != null) return dp[i][j];
-        long maxVal = Long.MIN_VALUE;
-        long minVal = Long.MAX_VALUE;
+        dp[0][0] = new Pair(grid[0][0], grid[0][0]);
 
-        // Down
-        if (i + 1 < m) {
-            Pair down = solve(i + 1, j, grid);
-
-            long a = grid[i][j] * down.max;
-            long b = grid[i][j] * down.min;
-
-            maxVal = Math.max(maxVal, Math.max(a, b));
-            minVal = Math.min(minVal, Math.min(a, b));
+        // Fill first row
+        for (int j = 1; j < n; j++) {
+            long val = grid[0][j];
+            long max = dp[0][j-1].max * val;
+            long min = dp[0][j-1].min * val;
+            dp[0][j] = new Pair(max, min);
         }
 
-        // Right
-        if (j + 1 < n) {
-            Pair right = solve(i, j + 1, grid);
-
-            long a = grid[i][j] * right.max;
-            long b = grid[i][j] * right.min;
-
-            maxVal = Math.max(maxVal, Math.max(a, b));
-            minVal = Math.min(minVal, Math.min(a, b));
+        // Fill first column
+        for (int i = 1; i < m; i++) {
+            long val = grid[i][0];
+            long max = dp[i-1][0].max * val;
+            long min = dp[i-1][0].min * val;
+            dp[i][0] = new Pair(max, min);
         }
 
-        dp[i][j]= new Pair(maxVal, minVal);
-        return dp[i][j];
-    }
+        // Fill the rest of the grid
+        for (int i = 1; i < m; i++) {
+            for (int j = 1; j < n; j++) {
+                long val = grid[i][j];
+                           // upmax ->a,upmin->b,leftmax->c,leftmin->d
+                long a = dp[i-1][j].max * val;
+                long b = dp[i-1][j].min * val;
+                long c = dp[i][j-1].max * val;
+                long d = dp[i][j-1].min * val;
 
-    public int maxProductPath(int[][] grid) {
-          int m = grid.length;
-        int n = grid[0].length;
-      dp = new Pair[m][n];
+                long maxVal = Math.max(Math.max(a, b), Math.max(c, d));
+                long minVal = Math.min(Math.min(a, b), Math.min(c, d));
 
-        Pair res = solve(0, 0, grid);
-        // If max is negative, return -1 (common constraint in problem)
+                dp[i][j] = new Pair(maxVal, minVal);
+            }
+        }
+
+        Pair res = dp[m-1][n-1];
         if (res.max < 0) return -1;
-
         return (int)(res.max % 1000000007);
     }
 }
