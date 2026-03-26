@@ -1,13 +1,13 @@
 class Solution {
     public int[] arrayRankTransform(int[] arr) {
-        Map<Integer, Integer> map = new TreeMap<>();
-       for(int num:arr){
-        map.put(num,0);
+        Map<Integer, Integer> map = new HashMap<>();
+        int [] sortuniqnum=Arrays.stream(arr).distinct().sorted().toArray();
+        int rank =1;
+       for(int num:sortuniqnum){
+        map.put(num,rank++);
        }
-       int rank =1;
-       for(int key:map.keySet()){
-        map.put(key,rank++);
-       }
+       
+       
        for(int i =0 ;i<arr.length;i++){
         arr[i] =map.get(arr[i]);
        }
