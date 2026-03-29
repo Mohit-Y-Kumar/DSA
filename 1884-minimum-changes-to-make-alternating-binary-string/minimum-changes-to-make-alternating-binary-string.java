@@ -1,19 +1,24 @@
 class Solution {
     public int minOperations(String s) {
-        int n =s.length();
-        int count1 =0;
-        int count2 =0;
-        for(int i = 0;i<n;i++){
-           // pattern 0101...
-            if (i % 2 == 0 && s.charAt(i) != '0') count1++;
-            if (i % 2 == 1 && s.charAt(i) != '1') count1++;
-
-            // pattern 1010...
-            if (i % 2 == 0 && s.charAt(i) != '1') count2++;
-            if (i % 2 == 1 && s.charAt(i) != '0') count2++;
+        int start0 = 0;
+        int start1 = 0;
+        
+        for (int i = 0; i < s.length(); i++) {
+            if (i % 2 == 0) {
+                if (s.charAt(i) == '0') {
+                    start1++;
+                } else {
+                    start0++;
                 }
-                return Math.min(count1,count2);
+            } else {
+                if (s.charAt(i) == '1') {
+                    start1++;
+                } else {
+                    start0++;
+                }
             }
         }
-    
-
+        
+        return Math.min(start0, start1);
+    }
+}
