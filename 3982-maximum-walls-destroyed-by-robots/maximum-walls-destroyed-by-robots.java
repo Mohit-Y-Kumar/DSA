@@ -1,82 +1,99 @@
-import java.util.*;
-
 class Solution {
 
-    private Integer[][] dp;
-    private int[][] robots; // [position, distance]
-    private int[] walls;
-    private int n;
-
-    public int maxWalls(int[] robotsInput, int[] distance, int[] wallsInput) {
-        n = robotsInput.length;
-        robots = new int[n][2];
+    public int maxWalls(int[] robots, int[] distance, int[] walls) {
+        int n = robots.length;
+        int[][] robotDist = new int[n][2];
         for (int i = 0; i < n; i++) {
-            robots[i][0] = robotsInput[i];
-            robots[i][1] = distance[i];
+            robotDist[i][0] = robots[i];
+            robotDist[i][1] = distance[i];
         }
-        Arrays.sort(robots, Comparator.comparingInt(a -> a[0]));
-        walls = wallsInput.clone();
+        Arrays.sort(robotDist, (a, b) -> a[0] - b[0]);
         Arrays.sort(walls);
 
-        dp = new Integer[n][2];
-        return dfs(n - 1, 1);  // start from last robot, dummy prev direction = 1 (right)
-    }
+        int m = walls.length;
+        int rightPtr = 0;
+        int leftPtr = 0;
+        int curPtr = 0;
+        int robotPtr = 0;
 
-    private int dfs(int i, int prevDir) {  // prevDir: 0 = previous fired left, 1 = previous fired right
-        if (i < 0) return 0;
-        if (dp[i][prevDir] != null) return dp[i][prevDir];
+        int prevLeft = 0;
+        int prevRight = 0;
+        int prevNum = 0;
+        int subLeft = 0;
+        int subRight = 0;
 
-        int pos = robots[i][0];
-        int dist = robots[i][1];
+        for (int i = 0; i < n; i++) {
+            int robotPos = robotDist[i][0];
+            int robotDistVal = robotDist[i][1];
 
-        int ans = 0;
-
-        // Option 1: Fire LEFT
-        int leftL = pos - dist;
-        if (i > 0) {
-            leftL = Math.max(leftL, robots[i - 1][0] + 1);
-        }
-        int leftR = pos;
-        int leftCount = count(leftL, leftR);
-        int leftTotal = leftCount + dfs(i - 1, 0);
-
-        // Option 2: Fire RIGHT
-        int rightR = pos + dist;
-        if (i + 1 < n) {
-            int nextPos = robots[i + 1][0];
-            int nextDist = robots[i + 1][1];
-            if (prevDir == 0) {  // next robot fires left → can reach farther left
-                rightR = Math.min(rightR, nextPos - nextDist - 1);
-            } else {
-                rightR = Math.min(rightR, nextPos - 1);
+            while (rightPtr < m && walls[rightPtr] <= robotPos) {
+                rightPtr++;
             }
-        }
-        int rightL = pos;
-        int rightCount = count(rightL, rightR);
-        int rightTotal = rightCount + dfs(i - 1, 1);
+            int pos1 = rightPtr;
 
-        ans = Math.max(leftTotal, rightTotal);
-        return dp[i][prevDir] = ans;
-    }
-
-    // Count walls in [L, R] inclusive
-    private int count(int L, int R) {
-        if (L > R) return 0;
-        int leftIdx = lowerBound(L);
-        int rightIdx = lowerBound(R + 1) - 1;
-        return Math.max(0, rightIdx - leftIdx + 1);
-    }
-
-    private int lowerBound(int target) {
-        int l = 0, r = walls.length;
-        while (l < r) {
-            int mid = l + (r - l) / 2;
-            if (walls[mid] < target) {
-                l = mid + 1;
-            } else {
-                r = mid;
+            while (curPtr < m && walls[curPtr] < robotPos) {
+                curPtr++;
             }
+            int pos2 = curPtr;
+
+            int leftBound = robotPos - robotDistVal;
+            if (i >= 1) {
+                leftBound = Math.max(
+                    robotPos - robotDistVal,
+                    robotDist[i - 1][0] + 1
+                );
+            }
+            while (leftPtr < m && walls[leftPtr] < leftBound) {
+                leftPtr++;
+            }
+            int leftPos = leftPtr;
+            int currentLeft = pos1 - leftPos;
+
+            int rightBound = robotPos + robotDistVal;
+            if (i < n - 1) {
+                rightBound = Math.min(
+                    robotPos + robotDistVal,
+                    robotDist[i + 1][0] - 1
+                );
+            }
+            while (rightPtr < m && walls[rightPtr] <= rightBound) {
+                rightPtr++;
+            }
+            int rightPos = rightPtr;
+            int currentRight = rightPos - pos2;
+
+            int currentNum = 0;
+            if (i > 0) {
+                while (robotPtr < m && walls[robotPtr] < robotDist[i - 1][0]) {
+                    robotPtr++;
+                }
+                int pos3 = robotPtr;
+                currentNum = pos1 - pos3;
+            }
+
+            if (i == 0) {
+                subLeft = currentLeft;
+                subRight = currentRight;
+            } else {
+                int newsubLeft = Math.max(
+                    subLeft + currentLeft,
+                    subRight -
+                    prevRight +
+                    Math.min(currentLeft + prevRight, currentNum)
+                );
+                int newsubRight = Math.max(
+                    subLeft + currentRight,
+                    subRight + currentRight
+                );
+                subLeft = newsubLeft;
+                subRight = newsubRight;
+            }
+
+            prevLeft = currentLeft;
+            prevRight = currentRight;
+            prevNum = currentNum;
         }
-        return l;
+
+        return Math.max(subLeft, subRight);
     }
 }
