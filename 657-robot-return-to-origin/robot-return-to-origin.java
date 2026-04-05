@@ -7,13 +7,13 @@ class Solution {
             if(moves.charAt(i) =='U'){
                 x++;
             }
-             if(moves.charAt(i) =='R'){
+             else if(moves.charAt(i) =='R'){
                 y++;
             }
-             if(moves.charAt(i) =='D'){
+            else if(moves.charAt(i) =='D'){
                 x--;
             }
-             if(moves.charAt(i) =='L'){
+            else if(moves.charAt(i) =='L'){
                 y--;
             }
             
