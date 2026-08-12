@@ -4,9 +4,7 @@ class Solution {
         int maxsum =Integer.MIN_VALUE;
         int currsum =0;
  
-     if (n ==1){
-        return nums[0];
-     }
+     
        
         for(int i =0;i<n;i++){
              currsum +=nums[i];
