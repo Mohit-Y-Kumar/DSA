@@ -17,10 +17,10 @@ class Solution {
 
         }
         int circularsum =totalsum -minsum;
-        if(maxsum>0){
-            return Math.max(maxsum,circularsum);
+        if(maxsum<0){
+            return maxsum;
         }
-        return maxsum;
+        return Math.max(maxsum,circularsum);
 
     }
 }
