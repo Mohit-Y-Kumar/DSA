@@ -1,32 +1,9 @@
 class Solution {
-    int dp[][];
-
-    public int solve(int[] nums, int idx, int target) {
-        
-        // Base case
-        if (idx == nums.length) {
-            return target == 0 ? 1 : 0;
-        }
-
-        if(dp[idx][target] != -1){
-            return dp[idx][target];
-        }
-
-        // Skip
-        int skip = solve(nums, idx + 1, target);
-
-        // Take
-        int take = 0;
-        if (nums[idx] <= target) {
-            take = solve(nums, idx + 1, target - nums[idx]);
-        }
-
-        return take + skip;
-    }
 
     public int findTargetSumWays(int[] nums, int target) {
 
         int totalSum = 0;
+
         for (int num : nums) {
             totalSum += num;
         }
@@ -41,12 +18,36 @@ class Solution {
         if (subsetTarget > totalSum) {
             return 0;
         }
-       
-       dp = new int[nums.length+1][subsetTarget+1];
-       for(int[] arr:dp){
-        Arrays.fill(arr,-1);
-       }
 
-        return solve(nums, 0, subsetTarget);
+        int n = nums.length;
+
+        // dp[i][j] = number of ways to make sum j
+        // using first i elements
+        int[][] dp = new int[n + 1][subsetTarget + 1];
+
+        // Base case:
+        // There is exactly 1 way to make sum 0:
+        // choose nothing.
+        dp[0][0] = 1;
+
+        for (int i = 1; i <= n; i++) {
+
+            for (int j = 0; j <= subsetTarget; j++) {
+
+                // Skip nums[i - 1]
+                int skip = dp[i - 1][j];
+
+                // Take nums[i - 1]
+                int take = 0;
+
+                if (nums[i - 1] <= j) {
+                    take = dp[i - 1][j - nums[i - 1]];
+                }
+
+                dp[i][j] = skip + take;
+            }
+        }
+
+        return dp[n][subsetTarget];
     }
 }
