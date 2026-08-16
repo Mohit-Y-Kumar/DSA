@@ -1,17 +1,42 @@
 class Solution {
-    public int solve(int[]nums,int idx,int currsum,int target){
-        if(idx==nums.length){
-            if(currsum==target) return 1;
-            else return 0;
+
+    public int solve(int[] nums, int idx, int target) {
+
+        // Base case
+        if (idx == nums.length) {
+            return target == 0 ? 1 : 0;
         }
-        int takep =solve(nums,idx+1,currsum+nums[idx],target);
-        int takem =solve(nums,idx+1,currsum-nums[idx],target);
-        return takep+takem;
+
+        // Skip
+        int skip = solve(nums, idx + 1, target);
+
+        // Take
+        int take = 0;
+        if (nums[idx] <= target) {
+            take = solve(nums, idx + 1, target - nums[idx]);
+        }
+
+        return take + skip;
     }
+
     public int findTargetSumWays(int[] nums, int target) {
-        int n =nums.length;
-        int currsum =0;
-        return solve(nums,0,currsum,target);
-        
+
+        int totalSum = 0;
+        for (int num : nums) {
+            totalSum += num;
+        }
+
+        // sum(P) = (totalSum + target) / 2
+        if (totalSum + target < 0 || (totalSum + target) % 2 != 0) {
+            return 0;
+        }
+
+        int subsetTarget = (totalSum + target) / 2;
+
+        if (subsetTarget > totalSum) {
+            return 0;
+        }
+
+        return solve(nums, 0, subsetTarget);
     }
 }
