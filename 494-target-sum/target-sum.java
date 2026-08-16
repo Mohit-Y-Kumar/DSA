@@ -1,10 +1,15 @@
 class Solution {
+    int dp[][];
 
     public int solve(int[] nums, int idx, int target) {
-
+        
         // Base case
         if (idx == nums.length) {
             return target == 0 ? 1 : 0;
+        }
+
+        if(dp[idx][target] != -1){
+            return dp[idx][target];
         }
 
         // Skip
@@ -36,6 +41,11 @@ class Solution {
         if (subsetTarget > totalSum) {
             return 0;
         }
+       
+       dp = new int[nums.length+1][subsetTarget+1];
+       for(int[] arr:dp){
+        Arrays.fill(arr,-1);
+       }
 
         return solve(nums, 0, subsetTarget);
     }
