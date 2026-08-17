@@ -1,30 +1,29 @@
 class Solution {
-   public int change(int amount, int[] coins) {
-        int n =coins.length;
-        int W= amount;
-        int dp[][] =new int [n+1][W+1];
-
-        for(int i =0;i<n+1;i++){ //0th col
-             dp[i][0] =1;
-           
-
-        }
-        for(int j =1;j<W+1;j++){//0th row
-             dp[0][j] =0;
-        }
-
-        for(int i =1;i<n+1;i++){
-            for(int j =1;j<W+1;j++){
-                int c =coins[i-1];
-                if(c<=j){ //valid
-                dp[i][j] =dp[i][j-c]+dp[i-1][j] ;
-
-                }
-                else{
-                  dp[i][j] =  dp[i-1][j];
-                }
+    int dp [][];
+    public int solve(int idx ,int amount ,int []coins){
+        if(idx==coins.length){
+            if(amount==0){
+                return 1;
+            }else{
+                return 0;
             }
+            
         }
-        return dp[n][W];
+        if(dp[idx][amount] != -1){
+            return dp[idx][amount];
+        }
+        int take =0;
+        if(coins[idx]<=amount){
+       take =solve(idx,amount-coins[idx],coins);
+        }
+       int skip =solve(idx+1,amount,coins);
+        return dp[idx][amount]= take+skip;
+    }
+    public int change(int amount, int[] coins) {
+        dp =new int [coins.length+1][amount+1];
+        for(int []arr:dp){
+            Arrays.fill(arr,-1);
+        }
+       return solve(0,amount,coins);
     }
 }
