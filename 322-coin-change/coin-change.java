@@ -3,8 +3,8 @@ class Solution {
 
     public int coinChange(int[] coins, int amount) {
         dp = new int[amount + 1];
-        for (int i = 1; i <= amount; i++) {
-            dp[i] = Integer.MAX_VALUE;
+        for (int j= 1; j <= amount; j++) {
+            dp[j] = Integer.MAX_VALUE;
         }
 
         
