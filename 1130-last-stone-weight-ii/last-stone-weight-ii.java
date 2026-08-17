@@ -1,5 +1,5 @@
 class Solution {
-    int dp[][];
+    int dp[];
 
     public int lastStoneWeightII(int[] stones) {
         int S = 0;
@@ -9,25 +9,21 @@ class Solution {
         }
 
         int target = S / 2;
-        dp = new int[stones.length + 1][target + 1];
-       
-    
-        for (int i = 1; i <= stones.length; i++) {
-            for (int j = 0; j <= target; j++) {
+        dp = new int[target + 1];
 
-                int take = 0;
+        for (int i = 0; i < stones.length; i++) {
+            int stone = stones[i];
 
-                if (stones[i - 1] <= j) {
-                    take = stones[i - 1] + dp[i - 1][j - stones[i - 1]];
-                }
+            for (int j = target; j >= stone; j--) {
 
-                int skip = dp[i - 1][j];
+                int take = stone + dp[j - stone];
+                int skip = dp[j];
 
-                dp[i][j] = Math.max(skip, take);
+                dp[j] = Math.max(skip, take);
             }
         }
 
-        return (S - 2 * dp[stones.length][target]);
+        return (S - 2 * dp[target]);
 
     }
 }
