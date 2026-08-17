@@ -1,37 +1,37 @@
 class Solution {
     int[][] dp;
 
-    public int solve(int[] coins, int idx, int amount) {
-        if (amount == 0) {
-            return 0;
-        }
-        if (idx == coins.length) {
-            return Integer.MAX_VALUE;
-        }
-        if (dp[idx][amount] != -1) {
-            return dp[idx][amount];
-        }
-        int take = Integer.MAX_VALUE;
-        if (coins[idx] <= amount) {
-            int result = solve(coins, idx, amount - coins[idx]);
-
-            if (result != Integer.MAX_VALUE) {
-                take = 1 + result;
+    public int coinChange(int[] coins, int amount) {
+        dp = new int[coins.length + 1][amount + 1];
+        for (int i = 0; i <= coins.length; i++) {
+            for (int j = 1; j <= amount; j++) {
+                dp[i][j] = Integer.MAX_VALUE;
             }
         }
-        int skip = solve(coins, idx + 1, amount);
-        dp[idx][amount] = Math.min(take, skip);
-        return dp[idx][amount];
-    }
+        for (int i = 0; i <= coins.length; i++) {
+            dp[i][0] = 0;
+        }
+        for (int i = 1; i <= coins.length; i++) {
 
-    public int coinChange(int[] coins, int amount) {
-        dp=new int[coins.length+1][amount+1];
-       for(int[]arr:dp){
-        Arrays.fill(arr,-1);
-       }
-        int ans = solve(coins, 0, amount);
-        
-        return ans == Integer.MAX_VALUE ? -1 : ans;
+            for (int j = 0; j <= amount; j++) {
+                //take
+                int take = Integer.MAX_VALUE;
+                if (coins[i - 1] <= j) {
+                    int res = dp[i][j - coins[i - 1]];
+                    if (res != Integer.MAX_VALUE) {
+                        take = 1 + res;
+                    }
+                }
+
+                //skip
+                int skip = dp[i - 1][j];
+                dp[i][j] = Math.min(take, skip);
+            }
+        }
+
+        return dp[coins.length][amount] == Integer.MAX_VALUE
+                ? -1
+                : dp[coins.length][amount];
 
     }
 }
