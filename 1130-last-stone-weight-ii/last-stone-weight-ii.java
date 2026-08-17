@@ -1,25 +1,6 @@
 class Solution {
     int dp[][];
 
-    public int solve(int stones[], int idx, int target) {
-        if (idx == stones.length || target == 0) {
-            return 0;
-        }
-        if (dp[idx][target] != -1) {
-            return dp[idx][target];
-        }
-
-        //skip
-        int skip = solve(stones, idx + 1, target);
-        //take
-        int take = 0;
-        if (stones[idx] <= target) {
-            take = stones[idx] + solve(stones, idx + 1, target - stones[idx]);
-        }
-
-        return dp[idx][target] = Math.max(skip, take);
-    }
-
     public int lastStoneWeightII(int[] stones) {
         int S = 0;
 
@@ -29,12 +10,24 @@ class Solution {
 
         int target = S / 2;
         dp = new int[stones.length + 1][target + 1];
-        for (int[] arr : dp) {
-            Arrays.fill(arr, -1);
-        }
-        int subsum = solve(stones, 0, target);
+       
+    
+        for (int i = 1; i <= stones.length; i++) {
+            for (int j = 0; j <= target; j++) {
 
-        return (S - 2 * subsum);
+                int take = 0;
+
+                if (stones[i - 1] <= j) {
+                    take = stones[i - 1] + dp[i - 1][j - stones[i - 1]];
+                }
+
+                int skip = dp[i - 1][j];
+
+                dp[i][j] = Math.max(skip, take);
+            }
+        }
+
+        return (S - 2 * dp[stones.length][target]);
 
     }
 }
