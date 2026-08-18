@@ -9,7 +9,7 @@ class Solution {
         
 
         for (int i = 1; i <= coins.length; i++) {
-            for (int j = 0; j <= amount; j++) {
+            for (int j = 1; j <= amount; j++) {
 
                 int skip = dp[j];
                 if (coins[i - 1] <= j) {
