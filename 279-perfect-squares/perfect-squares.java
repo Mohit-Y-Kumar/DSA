@@ -1,23 +1,27 @@
 class Solution {
-    int arr[];
-    public int solve(int n ){
-       
-        if(arr[n] !=-1){
-            return arr[n];
-        }
-         if(n==0) return 0;
-       int min =Integer.MAX_VALUE;
-        for(int i=1;i*i<=n;i++){
-            int res =1+solve(n-i*i);
-           min =Math.min(min,res);
-           arr[n] =min;
-        }
-        return arr[n];
-    }
+    int dp[];
+
     public int numSquares(int n) {
-         arr =new int[n+1];
-        Arrays.fill(arr,-1);
+        dp = new int[n + 1];
+        Arrays.fill(dp, n + 1);
+
         
-        return solve(n);
+            dp[0] = 0;
+        
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+
+               dp[j]= dp[j];
+
+                // Take i^2 if possible
+                if (i * i <= j) {
+                    dp[j] = Math.min(
+                            dp[j],
+                            1 + dp[j - i * i]);
+                }
+            }
+        }
+        return dp[n];
     }
 }
