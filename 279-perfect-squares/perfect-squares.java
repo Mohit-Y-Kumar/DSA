@@ -1,28 +1,21 @@
 class Solution {
+    int dp[];
+
     public int numSquares(int n) {
-        if (isPerfectSquare(n)) {
-            return 1;
-        }
+        dp = new int[n + 1];
+        Arrays.fill(dp, n + 1);
+        dp[0] = 0;
 
-        while (n % 4 == 0) {
-            n /= 4;
-        }
-
-        if (n % 8 == 7) {
-            return 4;
-        }
-
-        // int upperBound = M
         for (int i = 1; i * i <= n; i++) {
-            if (isPerfectSquare(n - i * i)) {
-                return 2;
+            int square = i * i;
+
+            for (int j = square; j <= n; j++) {
+                dp[j] = Math.min(
+                        dp[j],
+                        1 + dp[j - square]);
             }
         }
-        return 3;
-    }
 
-    private boolean isPerfectSquare(int num) {
-        int sqrt = (int)Math.sqrt(num);
-        return sqrt * sqrt == num;
+        return dp[n];
     }
 }
