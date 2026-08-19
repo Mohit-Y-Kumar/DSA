@@ -3,7 +3,7 @@ select
  p.project_id,
     COALESCE(
         ROUND(
-            SUM(e.experience_years) / COUNT(e.employee_id),
+            AVG(e.experience_years),
             2
         ),
         0
