@@ -1,39 +1,32 @@
 class Solution {
     List<String> res;
 
-    void backtrack(String curr, int n) {
+    void backtrack(StringBuilder curr, int n, int open, int close) {
         if (curr.length() == 2 * n) {
-            if (isValid(curr)) {
-                res.add(curr);
-            }
+            res.add(curr.toString());
             return;
         }
-        // Blindly try putting '(' next
-        backtrack(curr + "(", n);
-
-        backtrack(curr + ")", n);
-    }
-
-    private boolean isValid(String str) {
-        int balance = 0;
-        for (int i = 0; i < str.length(); i++) {
-            if (str.charAt(i) == '(') {
-                balance++;
-            } else {
-                balance--;
-            }
-            if (balance < 0) {
-                return false;
-            }
+        if (open < n) {
+            curr.append("("); //choose
+            backtrack(curr,n, open + 1, close); //explore
+            curr.deleteCharAt(curr.length() - 1); //undo choise
 
         }
+        if(close<open){
+            curr.append(")"); //choose
+            backtrack(curr,n,open,close+1 );//explore
+            curr.deleteCharAt(curr.length()-1); //undo choise
+        }
 
-        return balance == 0;
     }
+
+    
 
     public List<String> generateParenthesis(int n) {
         res = new ArrayList<>();
-        backtrack("", n);
+        int open =0;
+        int close =0;
+        backtrack(new StringBuilder(), n,open,close);
         return res;
 
     }
