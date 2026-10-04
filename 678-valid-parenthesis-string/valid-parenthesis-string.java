@@ -1,35 +1,32 @@
 class Solution {
-    boolean solve(int i, int opn, String s, int n, Boolean[][] dp) {
-        if (i == n)
-            return opn == 0;
+    public boolean checkValidString(String s) {
+        int n = s.length();
+        // dp[i][opn] represents whether s[i...n-1] is valid given 'opn' open brackets
+        boolean[][] dp = new boolean[n + 1][n + 1];
 
-        // Directly return cached boolean value
-        if (dp[i][opn] != null)
-            return dp[i][opn];
+        // Base case: at the end of string (i = n), it's valid only if open count is 0
+        dp[n][0] = true;
 
-        boolean isValid = false;
+        // Iterate backwards from the last character to the first
+        for (int i = n - 1; i >= 0; i--) {
+            for (int opn = 0; opn <= n; opn++) {
+                boolean isValid = false;
 
-        if (s.charAt(i) == '*') {
-            isValid |= solve(i + 1, opn + 1, s, n, dp);
-            isValid |= solve(i + 1, opn, s, n, dp);
-            if (opn > 0) {
-                isValid |= solve(i + 1, opn - 1, s, n, dp);
-            }
-        } else if (s.charAt(i) == '(') {
-            isValid = solve(i + 1, opn + 1, s, n, dp);
-        } else if (s.charAt(i) == ')') {
-            if (opn > 0) {
-                isValid = solve(i + 1, opn - 1, s, n, dp);
+                if (s.charAt(i) == '*') {
+                    if (opn + 1 <= n) isValid |= dp[i + 1][opn + 1]; // treat as '('
+                    isValid |= dp[i + 1][opn];                        // treat as empty
+                    if (opn > 0) isValid |= dp[i + 1][opn - 1];      // treat as ')'
+                } else if (s.charAt(i) == '(') {
+                    if (opn + 1 <= n) isValid = dp[i + 1][opn + 1];
+                } else if (s.charAt(i) == ')') {
+                    if (opn > 0) isValid = dp[i + 1][opn - 1];
+                }
+
+                dp[i][opn] = isValid;
             }
         }
 
-        // Store and return boolean directly
-        return dp[i][opn] = isValid;
-    }
-
-    public boolean checkValidString(String s) {
-        int n = s.length();
-        Boolean[][] dp = new Boolean[n][n + 1]; // defaults to null
-        return solve(0, 0, s, n, dp);
+        // The answer starts at index 0 with 0 open brackets
+        return dp[0][0];
     }
 }
