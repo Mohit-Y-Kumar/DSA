@@ -1,18 +1,19 @@
 class Solution {
     public int minAddToMakeValid(String s) {
-        int n = s.length();
-        char[] stack = new char[n];
-        int size = 0;
+        int open = 0, insertions = 0;
 
-        for (int i = 0; i < n; i++) {
-            char ch = s.charAt(i);
-            if (ch == ')' && size > 0 && stack[size - 1] == '(') {
-                size--;
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+
+            if (c == '(') {
+                open++;
+            } else if (open > 0) {
+                open--;
             } else {
-                stack[size++] = ch;
+                insertions++;
             }
         }
-        return size;
 
+        return insertions + open;
     }
 }
